@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+:root {
+    --background-gradient-start: #3a1c71;
+    --background-gradient-end: #d76d77;
+    --large-circle-color: #f2f2f2;
+    --pointer-color: #3a1c71;
+    --text-color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to right, var(--background-gradient-start), var(--background-gradient-end));
+    color: var(--text-color);
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.circle {
+    background-color: var(--large-circle-color);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.pointer-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 160px;
+    animation: rotate 19s linear forwards infinite;
+    transform-origin: bottom center;
+}
+
+.pointer {
+    background-color: var(--pointer-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+p {
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes shrink {
+    from {
+        transform: scale(1.2);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+#text{
+    color: black;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+
+}
+.container.grow {
+    animation: grow 4s linear forwards;
+}
+
+.container.shrink {
+    animation: shrink 8s linear forwards;
+}
